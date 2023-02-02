@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,12 +21,20 @@ public class HealthBar : MonoBehaviour
     //TODO: Tells current health (length)
     public int current()
     {
-        return 0;
+        return tm.text.Length;
     }
 
     //TODO: Decrease the current Health by removing one '-'
     public void decrease()
     {
+        if (current() > 1)
+        {
+            tm.text = tm.text.Remove(tm.text.Length - 1);
+        }
+        else
+        {
+            Destroy(transform.parent.gameObject);
+        }
         
     }
 }
