@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
     {
         HealthBar health = other.GetComponentInChildren<HealthBar>();
         if (health) {
-            health.decrease();
+            health.Decrease();
             Destroy(gameObject);
         }
     }

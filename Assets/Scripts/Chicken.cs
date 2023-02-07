@@ -11,12 +11,12 @@ public class Chicken : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.up * (Time.deltaTime * rotationSpeed), Space.World);
+        //transform.Rotate(Vector3.up * (Time.deltaTime * rotationSpeed), Space.World);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<ChickenEnemy>())
+        if (other.GetComponentInChildren<ChickenEnemy>())
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             bullet.GetComponent<Bullet>().target = other.transform;

@@ -19,15 +19,15 @@ public class HealthBar : MonoBehaviour
     }
     
     //TODO: Tells current health (length)
-    public int current()
+    public int Current()
     {
         return tm.text.Length;
     }
 
     //TODO: Decrease the current Health by removing one '-'
-    public void decrease()
+    public void Decrease()
     {
-        if (current() > 1)
+        if (Current() > 1)
         {
             tm.text = tm.text.Remove(tm.text.Length - 1);
         }

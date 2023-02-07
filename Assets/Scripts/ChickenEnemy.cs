@@ -8,7 +8,7 @@ public class ChickenEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject egg = GameObject.Find("Egg");
+        GameObject egg = GameObject.Find("egg");
         if (egg)
         {
             GetComponent<UnityEngine.AI.NavMeshAgent>().destination = egg.transform.position;
@@ -18,9 +18,9 @@ public class ChickenEnemy : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Egg")
+        if (other.name == "egg")
         {
-            other.GetComponentInChildren<HealthBar>().decrease();
+            other.GetComponentInChildren<HealthBar>().Decrease();
             Destroy(gameObject);
         }
     }
